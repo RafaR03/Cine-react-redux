@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Script from "../Services/Script";
+import Buscar from "./Buscar";
 import {useDispatch, useSelector} from "react-redux";
 import {getFilms, getFilmsFiltered} from "../slices/filmsThunks"
 
@@ -27,7 +27,7 @@ const Movies = () => {
 
   return (
     <div>
-      <Script onSearch={handleSearch} />
+      <Buscar onSearch={handleSearch} />
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 m-4">
         {film.map((movie) => (
           <Link key={movie.id} to={`/film/${movie.id}`}>
